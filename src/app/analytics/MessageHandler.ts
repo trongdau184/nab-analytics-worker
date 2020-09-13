@@ -15,6 +15,7 @@ export default class MessageHandler implements IMessageHandler {
     }
 
     public async handleMessage(message: any) {
+        console.log(`Handle message ${JSON.stringify(message)}`);
         let messageBody = JSON.parse(message.Body);
         let messageType = messageBody.type;
         let result = null;
@@ -32,6 +33,7 @@ export default class MessageHandler implements IMessageHandler {
                 console.log("Invalid Message Type");
                 break;
         }
+        console.log(`Handle message result: ${JSON.stringify(result)}`);
         return result;
     }
 
