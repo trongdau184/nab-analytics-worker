@@ -31,10 +31,6 @@ const start = async () => {
 
     const queueConfigs = Configs.getQueueConfigs();
 
-    //const server = await Server.init(config, db);
-    //const server = await Server.init(serverConfigs);
-    //await server.start();
-
     // Start polling message from SQS
     let handleMessage = async (message) => {
       console.log(`Message ${JSON.stringify(message)}`);
@@ -65,5 +61,4 @@ const start = async () => {
 };
 
 // Start the server
-//start({ config: serverConfigs, db: database });
 start();
